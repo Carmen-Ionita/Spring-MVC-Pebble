@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<br>
+<a href="addContact"> Add new contact </a>
+<br>
+<br>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone number</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    {% for contact in contacts %}
+    <tr>
+        <td>
+            {{ contact.firstName }}
+        </td>
+        <td>
+            {{ contact.lastName }}
+        </td>
+        <td>
+            {{ contact.phoneNumber }}
+        </td>
+        <td>
+            {{ contact.email }}
+        </td>
+        <td>
+            <form method="GET" action="/updateContact/{{ contact.id }}">
+                <button type="submit">Edit</button>
+            </form>
+            <form method="POST" action="/deleteContact/{{ contact.id }}">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% import "fragments/inputField" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add contact</title>
+</head>
+<body>
+<form method="POST">
+        {{ inputField("contact", "First Name", "firstName", "text", contact.firstName, _context) }}
+        {{ inputField("contact", "Last Name", "lastName", "text", contact.lastName, _context) }}
+        {{ inputField("contact", "Phone number", "phoneNumber", "text", contact.phoneNumber, _context) }}
+        {{ inputField("contact", "Email", "email", "text", contact.email, _context) }}
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
